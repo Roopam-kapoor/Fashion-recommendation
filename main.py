@@ -37,6 +37,11 @@ model = tensorflow.keras.Sequential([
     GlobalMaxPooling2D()
 ])
 
+port = int(os.environ.get('PORT', 8501))
+
+# Run the Streamlit app with the specified port
+st._config.set_option('server.port', port)
+
 st.title('Fashion Recommender System')
 
 def save_uploaded_file(uploaded_file):
